@@ -123,6 +123,7 @@ public class ClienteMainController implements Initializable {
         // CRUD
         btnAdd.setOnAction(e -> loadCrearMod(null));
         btnUpdate.setOnAction(e -> loadCrearMod(tvClientes.getSelectionModel().getSelectedItem()));
+    
     }
 
     /**
@@ -299,4 +300,5 @@ public class ClienteMainController implements Initializable {
         clientesData = FXCollections.observableArrayList(clienteManager.getClientes());
         tvClientes.getItems().setAll(clientesData);
     }
+    
 }

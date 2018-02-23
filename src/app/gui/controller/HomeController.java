@@ -9,7 +9,12 @@ import app.App;
 import app.gui.controller.cliente.ClienteMainController;
 import app.gui.controller.factura.FacturaMainController;
 import app.gui.controller.servicio.ServicioMainController;
+import app.logic.imp.ClienteDAO;
 import app.logic.imp.FacturaDAO;
+import app.logic.imp.ServicioDAO;
+import app.logic.interfaces.ClienteManager;
+import app.logic.interfaces.FacturaManager;
+import app.logic.interfaces.ServicioManager;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -34,6 +39,9 @@ import javafx.stage.WindowEvent;
  */
 public class HomeController implements Initializable {
     private static final Logger logger = Logger.getLogger(HomeController.class.getName());
+    private static ServicioManager servicioManager = new ServicioDAO();
+    private static FacturaManager facturaManager = new FacturaDAO();
+    private static ClienteManager clienteManager = new ClienteDAO();
     private Stage stage;
     
     private Label label;
@@ -155,5 +163,27 @@ public class HomeController implements Initializable {
             logger.log(Level.SEVERE, "Error al cargar modulo facturas.", ex);
         }
     }
+
+    /**
+     * @return the servicioManager
+     */
+    public static ServicioManager getServicioManager() {
+        return servicioManager;
+    }
+
+    /**
+     * @return the facturaManager
+     */
+    public static FacturaManager getFacturaManager() {
+        return facturaManager;
+    }
+
+    /**
+     * @return the clienteManager
+     */
+    public static ClienteManager getClienteManager() {
+        return clienteManager;
+    }
+    
     
 }

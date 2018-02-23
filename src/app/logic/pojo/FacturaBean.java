@@ -74,7 +74,7 @@ public class FacturaBean {
      * @param idcliente the idcliente to set
      */
     public void setIdcliente(Integer idcliente) {
-        this.idcliente.set(0);
+        this.idcliente.set(idcliente);
     }
 
     /**
@@ -105,6 +105,8 @@ public class FacturaBean {
         this.total.set(total);
     }
  
-    
+    public String toString(){
+        return this.getId()+", "+this.getIdcliente()+", "+this.getDate()+", "+this.getServicios()+", "+this.getTotal();
+    }
     
 }

@@ -101,4 +101,9 @@ public class ClienteBean {
     public void setRegdate(String regdate){
         this.regdate.set(regdate);
     }
+    
+    @Override
+    public String toString(){
+        return this.getId()+", "+this.getName()+" "+this.getLastname();
+    }
 }
